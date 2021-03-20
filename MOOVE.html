@@ -2,7 +2,7 @@
 <html>
 
 <body>
-<h1 style="font-family:Arial; text-align: center;">DESTONY BEYOND</h1 style="font-family:Arial; text-align: center;">
+
 
 
 </body>
@@ -10,20 +10,51 @@
 <head>
 <style>
   canvas {
-      border:1px solid #c70c0c;
-      background-image:"Sabata region.png";
+    border:1px solid #c71212;
+    background-image:"Sabata region.png";
   }
 </style>
 </head>>
 <title>Destony Beyond</title>
 <body onload="startGame()">
 <script>
+function damageself(){
+
+this.damageself(input = e);
+this.update = function(input = q){
+  this.health -10 ;health;
+
+
+}
+
+}
+
+
 var duhefuibe;
+var BACKGROUND
+var myGameArea
 
 function startGame() {
-  var duhefuibe = new component(30, 30, "red", 225, 225);
-    myGameArea.start();
+  var duhefuibe = new component(30, 30, "duhefuibe(1).png", 225, 225, "image");
+  BACKGROUND = new component(656, 270, "Sabata region.png", 0, 0, "image")
+  myGameArea.start();
 
+}var myGameArea = {
+  canvas : document.createElement("canvas"),
+  start : function() {
+    this.canvas.width = 960;
+    this.canvas.height = 400;
+    this.context = this.canvas.getContext("2d");
+    document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+  }
+}
+function updateGameArea() {
+  myGameArea.clear();
+  BACKGROUND.newPos();
+  BACKGROUND.update();
+  duhefuibe.newPos();
+  duhefuibe.update();
+}
 
   function dispose(usage, usagecount){
   var usagecount;
@@ -43,9 +74,13 @@ function startGame() {
   this.healingamounts = 30 + 10 (healingpower);
   this.healingamounts = 40 + 10 (healingpower);
   this.healingamounts = 50 + 10 (healingpower);
-  this.healingpower + 10(health);
+  
   this.helaingamount = (usage);
-  this.input = q
+  this.update = function(input = q){
+    this.healingpower + 10(health);
+
+
+}
 
 }
   function attack(ataacks, attackspped){
@@ -66,9 +101,13 @@ function startGame() {
   this.attacks = 25 + 25 (attackspped);
   this.attacks = 25 + 25 (attackpower);
   this.attacks = 25 + 25 (attackspped);
-  this.attack(input = z)
+  this.update = function(input = z){
+  
+
+
+  }
 }
-function component(damage, health){
+function damage(damage, health){
 var health;
 this.health = 100;
 this.damage = -10 (health);
@@ -87,32 +126,47 @@ if(health = 0){
 }
 }
 alert('This game is very horrible so dont expect much');
-function component(width, height, color, x, y, angle, update) {
-  this.gamearea = gamearea;
-  this.width = width;
-  this.height = height;
-  this.angle = 1;
-  this.speed = 1;
-  this.x = x;
-  this.y = y;
-  this.update = function(input = wasd) {
+function component(width, height, color, x, y, type) {
+
+this.type = type;
+this.width = width;
+this.height = height;
+this.speed = 0;
+this.angle = 0;
+this.moveAngle = 0;
+this.x = x;
+this.y = y;    
+this.update = function() {
     ctx = myGameArea.context;
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.rotate(this.angle);
     ctx.fillStyle = color;
     ctx.fillRect(this.width / -2, this.height / -2, this.width, this.height);
-    ctx.restore();
-  }
-  this.newPos = function() {
+    ctx.restore();    
+}
+this.newPos = function() {
+    this.angle += this.moveAngle * Math.PI / 180;
     this.x += this.speed * Math.sin(this.angle);
     this.y -= this.speed * Math.cos(this.angle);
-  }
+}
 }
 
+function updateGameArea() {
+myGameArea.clear();
+myGamePiece.moveAngle = 0;
+myGamePiece.speed = 0;
+if (myGameArea.keys && myGameArea.keys[37]) {myGamePiece.moveAngle = -1; }
+if (myGameArea.keys && myGameArea.keys[39]) {myGamePiece.moveAngle = 1; }
+if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speed= 1; }
+if (myGameArea.keys && myGameArea.keys[40]) {myGamePiece.speed= -1; }
+myGamePiece.newPos();
+myGamePiece.update();
+}
 </script>
 
-<p>wasd and arrows to move and q for heal</p>
+
+
 
 
 </body>

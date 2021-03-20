@@ -10,29 +10,31 @@
 <head>
 <style>
   canvas {
-      border:1px solid #d3d3d3;
-      background-color: #f1f1f1;
+      border:1px solid #c70c0c;
+      background-image:"Sabata region.png";
   }
 </style>
 </head>>
 <title>Destony Beyond</title>
 <body onload="startGame()">
 <script>
-var 
+var duhefuibe;
 
 function startGame() {
-    myGamePiece = new component(30, 30, "red", 225, 225);
+  var duhefuibe = new component(30, 30, "red", 225, 225);
     myGameArea.start();
 
 
-  function component(usage){
-  if(heal){
-    usage + 1
+  function dispose(usage, usagecount){
+  var usagecount;
+    if(heal){
+    usage + 1;
+    usagecount + 1;
   }
   
   
   }
-  function component(healpower, healingamounts){
+  function heal(healpower, healingamounts, heal){
   var healingpower;
   var healingamounts;
   this.healingpower = 10;
@@ -43,8 +45,10 @@ function startGame() {
   this.healingamounts = 50 + 10 (healingpower);
   this.healingpower + 10(health);
   this.helaingamount = (usage);
+  this.input = q
+
 }
-  function component(ataacks, attackspped){
+  function attack(ataacks, attackspped){
   var attacks;
   var attackpower;
   var attackspped;
@@ -62,6 +66,7 @@ function startGame() {
   this.attacks = 25 + 25 (attackspped);
   this.attacks = 25 + 25 (attackpower);
   this.attacks = 25 + 25 (attackspped);
+  this.attack(input = z)
 }
 function component(damage, health){
 var health;
@@ -90,7 +95,7 @@ function component(width, height, color, x, y, angle, update) {
   this.speed = 1;
   this.x = x;
   this.y = y;
-  this.update = function() {
+  this.update = function(input = wasd) {
     ctx = myGameArea.context;
     ctx.save();
     ctx.translate(this.x, this.y);
@@ -107,7 +112,7 @@ function component(width, height, color, x, y, angle, update) {
 
 </script>
 
-
+<p>wasd and arrows to move and q for heal</p>
 
 
 </body>

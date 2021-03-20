@@ -5,4 +5,4 @@ It is about a knight that is on an adventure
 2. Completly FREE
 3. Made by one person
 # Code language
-this is unecessary but it is coded in js (javascript)
+this is unecessary but it is coded in hjs (thats what i call html then javascript in script tag)
